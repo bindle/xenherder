@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Xen Host (pious)</title>
+		<meta charset='UTF-8'>
+		<link href='xenherder.css' rel='stylesheet'>
+		<script src='xenherder.js'></script>
+	</head>
+	<body>
+		<div id='page'>
+			<div id='header'>
+				<h1>Engineering Cluster</h1>
+				<h2>Xen Herder</h2>
+			</div><!-- #header (end) -->
+			<div id='navbar'>
+				<ul>
+					<li><a href='#' title=''>Dashboard</a></li>
+					<li><a href='#' title=''>pious.prv.eng</a></li>
+					<li><a href='#' title=''>Summary</a></li>
+				</ul>
+				<p>
+					2013/01/21 14:43:21
+				</p>
+			</div><!-- #navbar (end) -->
+			<div id='menu'>
+				<h3>Dashboard</h3>
+				<ul>
+					<li><a href='#' title=''>Summary</a></li>
+					<li><a href='#' title=''>Xen Herder</a></li>
+				</ul>
+				<h3>pious.prv.eng</h3>
+				<ul>
+					<li><a href='#' title=''>Summary</a></li>
+					<li><a href='#' title=''>Details</a></li>
+					<li><a href='#' title=''>Dmesg</a></li>
+				</ul>
+				<h3>Domains</h3>
+				<ul>
+					<li><a href='#' title=''>Domain-0</a></li>
+					<li><a href='#' title=''>freebsd32</a></li>
+					<li><a href='#' title=''>freebsd64</a></li>
+					<li><a href='#' title=''>linux32</a></li>
+					<li><a href='#' title=''>linux64</a></li>
+					<li><a href='#' title=''>xenfree</a></li>
+					<li><a href='#' title=''>xenslack</a></li>
+				</ul>
+			</div><!-- #left (end) -->
+			<div id='content'>
+				<h3>Host</h3>
+				<div class='article'>
+					<table>
+						<tr><th>Host</th><th>Xen</th><th>Linux</th><th>Domains</th><th>vCPU</th><th>CPU Cores</th><th>Threads/Core</th><th>Free Memory</th><th>Total Memory</th></tr>
+						<tr><td><a href='#'>pious.prv.eng</a></td><td>4.3.1</td><td>3.12.7-xen-dom0</td><td>3</td><td>4</td><td>4</td><td>1</td><td>2811 (34.8%)</td><td>8073</td></tr>
+						<tr><th colspan=9 class='cmdhint'>xl -v info -n</th></tr>
+					</table>
+				</div><!-- #article (end) -->
+				<h3>Domains</h3>
+				<div class='article'>
+					<table>
+						<tr><th>Name</th><th>ID</th><th>Status</th><th>Type</th><th>Memory Used</th><th>Max Memory</th><th>vCPU</th><th>CPU Time</th></tr>
+						<tr><td><a href='#'>Domain-0</a></td><td>0</td><td>Running</td><td>HVM</td><td>1024 (12.5%)</td><td>1024 (12.5%)</td><td>1</td><td>4344.0</td></tr>
+						<tr><td><a href='#'>xenslack.prv.eng</a></td><td>42</td><td>Running</td><td>PV</td><td>1024 (12.5%)</td><td>1024 (12.5%)</td><td>1</td><td>26.1</td></tr>
+						<tr><td><a href='#'>xenfree.prv.eng</a></td><td>53</td><td>Running</td><td>PVHVM</td><td>2048 (25.0%)</td><td>2048 (25.0%)</td><td>2</td><td>224.1</td></tr>
+						<tr><td><a href='#'>freebsd32.prv.eng</a></td><td></td><td>Ready</td><td>HVM</td><td>1024 (12.5%)</td><td>1024 (12.5%)</td><td>1</td><td></td></tr>
+						<tr><td><a href='#'>freebsd64.prv.eng</a></td><td></td><td>Ready</td><td>HVM</td><td>1024 (12.5%)</td><td>1024 (12.5%)</td><td>1</td><td></td></tr>
+						<tr><td><a href='#'>linux32.prv.eng</a></td><td></td><td>Ready</td><td>PV</td><td>1024 (12.5%)</td><td>1024 (12.5%)</td><td>1</td><td></td></tr>
+						<tr><td><a href='#'>linux64.prv.eng</a></td><td></td><td>Ready</td><td>PV</td><td>1024 (12.5%)</td><td>1024 (12.5%)</td><td>1</td><td></td></tr>
+						<tr><th colspan=8 class='cmdhint'>xl -v list -n</th></tr>
+					</table>
+				</div><!-- #article (end) -->
+			</div><!-- #content (end) -->
+			<div id='footer'><p>Powered by Xen Herder Wireframe</p></div><!-- #footer (end) -->
+		</div><!-- #page (end) -->
+	</body>
+</html>

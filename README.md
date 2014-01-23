@@ -63,13 +63,9 @@ Source Code
    (http://git-scm.com).  The following contains information to checkout the
    source code from the git repository.
 
-   Browse Source:
-
-      https://github.com/bindle/xenherder
-
-   Git URLs:
-
-      git://github.com/bindle/xenherder.git
+   --------------|--------------------------------------
+   Browse Source | https://github.com/bindle/xenherder
+   Git URLs      | git://github.com/bindle/xenherder.git
 
    Downloading Source:
 
@@ -98,18 +94,18 @@ Package Maintence Notes
 
    New Release Checklist:
 
-      * GNU GCC 4.2.1
-      * Switch to 'master' branch in Git repository.
-      * Update version in configure.ac.
-      * Update date and version in ChangeLog.
-      * Commit configure.ac and ChangeLog changes to repository.
-      * Create tag in git repository:
+   * GNU GCC 4.2.1
+   * Switch to 'master' branch in Git repository.
+   * Update version in configure.ac.
+   * Update date and version in ChangeLog.
+   * Commit configure.ac and ChangeLog changes to repository.
+   * Create tag in git repository:
 
-         $ git tag -s v${MAJOR}.${MINOR}
+      $ git tag -s v${MAJOR}.${MINOR}
 
-      * Push repository to publishing server:
+   * Push repository to publishing server:
 
-         $ git push --tags origin master:master next:next pu:pu
+      $ git push --tags origin master:master next:next pu:pu
 
    Creating Source Distribution Archives:
 
@@ -117,3 +113,4 @@ Package Maintence Notes
        $ make update
        $ make distcheck
        $ make dist-bzip2
+

@@ -87,7 +87,7 @@ int main(void)
    printf("      </div><!-- #header (end) -->");
    printf("      <div id='navbar'>");
    printf("        <ul>");
-   printf("          <li><a href='/' title='Doashboard'>Dashboard</a></li>");
+   printf("          <li><a href='/' title='Dashboard'>Dashboard</a></li>");
    printf("        </ul>");
    printf("        <p>");
    printf("          %s", timestr);

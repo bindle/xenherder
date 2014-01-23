@@ -34,6 +34,22 @@ Disclaimer
 Design
 ------
 
+   Design Priorities:
+
+   1. Security
+   2. Minimal Resource Requirements
+   3. UI Consistency
+   3. Server Portability
+   4. Client Portability
+
+   Design Goals:
+
+   1. Web Interface
+      1. Ability to view running guests.
+      2. Ability to view host information.
+      3. Ability to start, stop, reboot guests.
+      4. Ability to manage clusters/multiple hosts.
+
 
 Software Requirements
 ---------------------

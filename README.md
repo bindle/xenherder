@@ -63,6 +63,7 @@ Source Code
    (http://git-scm.com).  The following contains information to checkout the
    source code from the git repository.
 
+   Description   | URL
    --------------|--------------------------------------
    Browse Source | https://github.com/bindle/xenherder
    Git URLs      | git://github.com/bindle/xenherder.git

@@ -1,8 +1,39 @@
 
 
-PROG		= xenherder.cgi
+PROG		= xenherder.cgi \
+		  xenherder.min.js \
+		  xenherder.min.css
 
 all: $(PROG)
+htdocs: xenherder.min.js xenherder.min.css
+
+xenherder.min.js: Makefile xenherder.js jquery.min.js jquery.tablesorter.min.js
+	@rm -f $(@)
+	cat jquery.min.js >> $(@)
+	cat jquery.tablesorter.min.js >> $(@)
+	sed -e 's,//.*$$,,g' \
+	   -e 's/^ *//g' \
+	   -e 's/ *$$//g' \
+	   -e 's,/\*.*\*/,,g' \
+	   xenherder.js \
+	   |grep -v '^$$' \
+	   |sed -e ':a' -e 'N' -e '$$!ba' -e 's/\([{;]\)\n/\1/g' \
+	   >> $(@)
+	
+
+xenherder.min.css: Makefile xenherder.css
+	@rm -f $(@)
+	sed -e 's,//.*$$,,g' \
+	   -e 's/^[[:space:]]*//g' \
+	   -e 's/[[:space:]]*$$//g' \
+	   -e 's/:[[:space:]]*/:/g' \
+	   -e 's/[[:space:]]\{2,\}/ /g' \
+	   -e 's,/\*.*\*/,,g' \
+	   xenherder.css \
+	   |grep -v '^$$' \
+	   |sed -e ':a' -e 'N' -e '$$!ba' -e 's/\([{;]\)\n/\1/g' \
+	   >> $(@)
+	
 
 xenherder.cgi: Makefile xenherder-cgi.c
 	gcc -o $(@) -lxenlight xenherder-cgi.c

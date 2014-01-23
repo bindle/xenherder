@@ -44,6 +44,24 @@ th, td
 	font-style:		oblique;
 }
 
+.header
+{
+	//background-image:	url(bg.gif);
+	background-repeat:	no-repeat;
+	background-position:	center right;
+	padding-right:		20px;
+}
+
+.headerSortUp
+{
+	background-image:	url(asc.gif);
+}
+
+.headerSortDown
+{
+	background-image:	url(desc.gif);
+}
+
 #javascript_warning
 {
 	color:			#000;

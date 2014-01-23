@@ -117,7 +117,7 @@ int main(void)
    printf("        <div class='article'>\n");
    printf("          <table>\n");
    printf("            <thead>\n");
-   printf("              <tr><th>Host</th><th>Xen</th><th>OS</th><th>Domains</th><th>vCPU</th><th>CPU Cores</th><th>Threads/Core</th><th>Free Memory</th><th>Total Memory</th></tr>\n");
+   printf("              <tr><th>Host</th><th>Xen</th><th>OS</th><th>Domains</th><th>vCPU</th><th>CPU Cores</th><th>Threads/Core</th><th>Free Mem</th><th>Total Mem</th></tr>\n");
    printf("            </thead>\n");
    printf("            <tbody>\n");
    printf("              <tr>");

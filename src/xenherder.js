@@ -7,12 +7,14 @@ function xenherder_init()
    $.tablesorter.formatInt = function (s)
    {
       var i = parseInt(s);
-      return (isNaN(i)) ? -1 : i;
+      //return (isNaN(i)) ? -1 : i;
+      return (isNaN(i)) ? null : i;
    };
    $.tablesorter.formatFloat = function (s)
    {
       var i = parseFloat(s);
-      return (isNaN(i)) ? -1 : i;
+      //return (isNaN(i)) ? -1 : i;
+      return (isNaN(i)) ? null : i;
    };
    $("table").tablesorter();
 

@@ -166,6 +166,7 @@ int main(void)
    printf("        </div><!-- #article (end) -->\n");
    printf("      </div><!-- #content (end) -->\n");
    printf("      <div id='footer'>\n");
+   printf("        <div id='javascript_warning'>Royce, enable JavaScript for advanced user features.</div>\n");
    printf("        <p>Powered by Xen Herder Prototype</p>\n");
    printf("      </div><!-- #footer (end) -->\n");
    printf("    </div><!-- #page (end) -->\n");

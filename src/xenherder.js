@@ -16,6 +16,8 @@ function xenherder_init()
    };
    $("table").tablesorter();
 
+   document.getElementById('javascript_warning').innerHTML = '';
+
    return;
 }
 

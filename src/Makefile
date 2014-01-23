@@ -44,6 +44,9 @@ install: $(PROG)
 	chmod u+s            /usr/local/www/xenherder/htdocs/xenherder.cgi
 	cp xenherder.min.css /usr/local/www/xenherder/htdocs/xenherder.min.css
 	cp xenherder.min.js  /usr/local/www/xenherder/htdocs/xenherder.min.js
+	cp asc.gif           /usr/local/www/xenherder/htdocs/
+	cp bg.gif            /usr/local/www/xenherder/htdocs/
+	cp desc.gif          /usr/local/www/xenherder/htdocs/
 
 clean:
 	rm -f $(PROG)

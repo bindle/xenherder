@@ -39,10 +39,11 @@ xenherder.cgi: Makefile xenherder-cgi.c
 	gcc -o $(@) -lxenlight xenherder-cgi.c
 
 install: $(PROG)
-	cp xenherder.cgi /usr/local/www/xenherder/htdocs/xenherder.cgi
-	chown root:root  /usr/local/www/xenherder/htdocs/xenherder.cgi
-	chmod u+s        /usr/local/www/xenherder/htdocs/xenherder.cgi
-	cp xenherder.css /usr/local/www/xenherder/htdocs/xenherder.css
+	cp xenherder.cgi     /usr/local/www/xenherder/htdocs/xenherder.cgi
+	chown root:root      /usr/local/www/xenherder/htdocs/xenherder.cgi
+	chmod u+s            /usr/local/www/xenherder/htdocs/xenherder.cgi
+	cp xenherder.min.css /usr/local/www/xenherder/htdocs/xenherder.min.css
+	cp xenherder.min.js  /usr/local/www/xenherder/htdocs/xenherder.min.js
 
 clean:
 	rm -f $(PROG)

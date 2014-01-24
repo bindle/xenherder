@@ -110,6 +110,8 @@ AC_TYPE_SIZE_T
 
 # custom configure options
 AC_BINDLE_ENABLE_WARNINGS
+AC_BINDLE_WITH_SQLITE3
+AC_XENHERDER_WITH_XENLIGHT
 
 # determine PACKAGE_VERSION via Git
 AC_BINDLE_GIT_PACKAGE_VERSION([contrib/bindletools/build-aux/git-package-version.sh])
@@ -120,11 +122,30 @@ AC_OUTPUT
 
 # Show local config
 AC_MSG_NOTICE([ ])
-AC_MSG_NOTICE([   Xen Herder])
+AC_MSG_NOTICE([ Xen Herder ${GIT_PACKAGE_VERSION} (${GIT_PACKAGE_BUILD})])
 AC_MSG_NOTICE([ ])
-AC_MSG_NOTICE([   Please send suggestions to:   $PACKAGE_BUGREPORT])
+AC_MSG_NOTICE([ Build Configuration:])
+AC_MSG_NOTICE([    use libxenlight:          ${HAVE_XENLIGHT}])
+AC_MSG_NOTICE([    use SQLite3:              ${HAVE_SQLITE3}])
+AC_MSG_NOTICE([    use net-snmp:             no])
+AC_MSG_NOTICE([ ])
+AC_MSG_NOTICE([ Build Options:])
+AC_MSG_NOTICE([    build libxenlight stub:   no])
+AC_MSG_NOTICE([    build daemon:             no])
+AC_MSG_NOTICE([    build CLI tools:          no])
+AC_MSG_NOTICE([    build web tools:          no])
+AC_MSG_NOTICE([    build docs:               no])
+AC_MSG_NOTICE([ ])
+AC_MSG_NOTICE([ Compile Options:])
+AC_MSG_NOTICE([    CC                  = ${CC}])
+AC_MSG_NOTICE([    CFLAGS              = ${CFLAGS}])
+AC_MSG_NOTICE([    LDFLAGS             = ${LDFLAGS}])
+AC_MSG_NOTICE([    LIBS                = ${LIBS}])
+AC_MSG_NOTICE([    CPPFLAGS            = ${CPPFLAGS}])
+AC_MSG_NOTICE([    CPP                 = ${CPP}])
 AC_MSG_NOTICE([ ])
 AC_MSG_NOTICE([   run 'make all'])
 AC_MSG_NOTICE([ ])
+AC_MSG_NOTICE([   Please send suggestions to:   $PACKAGE_BUGREPORT])
 
 # end of configure.ac

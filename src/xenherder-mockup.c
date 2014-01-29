@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <unistd.h>
 #include <libxl.h>
 #include <libxl_utils.h>
 #include <stdlib.h>
@@ -7,6 +8,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <locale.h>
+#include <string.h>
 
 int main(void);
 
@@ -38,7 +40,7 @@ int main(void)
    strncpy(hostname_long, hostname, 512);
    strncat(hostname_long, ".", 512);
    len = strlen(hostname_long);
-   getdomainname(&hostname_long[len], 512-len);
+   getdomainname(&hostname_long[len], 512-(int)len);
 
    if (libxl_ctx_alloc(&ctx, LIBXL_VERSION, 0, NULL) != 0)
    {
@@ -49,7 +51,7 @@ int main(void)
    if (!(xeninfo = libxl_get_version_info(ctx)))
    {
       fprintf(stderr, "libxl_get_version_info failed.\n");
-      return;
+      return(1);
    };
 
    if (libxl_get_physinfo(ctx, &physinfo) != 0)
@@ -152,8 +154,8 @@ int main(void)
       printf("<td>%i</td>", dominfo[i].domid);
       printf("<td>Running</td>");
       printf("<td>unknown</td>");
-      printf("<td>%i</td>", dominfo[i].current_memkb / 1024);
-      printf("<td>%i</td>", (dominfo[i].outstanding_memkb+dominfo[i].current_memkb) / 1024);
+      printf("<td>%llu</td>", dominfo[i].current_memkb / 1024);
+      printf("<td>%llu</td>", (dominfo[i].outstanding_memkb+dominfo[i].current_memkb) / 1024);
       printf("<td>%i</td>", dominfo[i].vcpu_online);
       printf("<td>%.1f</td></tr>\n", ((float)dominfo[i].cpu_time / 1e9));
       free(domname);

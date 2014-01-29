@@ -35,8 +35,8 @@ xenherder.min.css: Makefile xenherder.css
 	   >> $(@)
 	
 
-xenherder.cgi: Makefile xenherder-cgi.c
-	gcc -o $(@) -lxenlight xenherder-cgi.c
+xenherder.cgi: Makefile xenherder-mockup.c
+	gcc -o $(@) -lxenlight xenherder-mockup.c
 
 install: $(PROG)
 	cp xenherder.cgi     /usr/local/www/xenherder/htdocs/xenherder.cgi

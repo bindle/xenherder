@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		A0B412EC1898799500A6E780 /* libxenherder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B412EB1898799500A6E780 /* libxenherder.h */; };
+		A0B4130918988F6000A6E780 /* ctx.c in Sources */ = {isa = PBXBuildFile; fileRef = A0B412FF18988EF100A6E780 /* ctx.c */; };
+		A0B4130A18988F6000A6E780 /* ctx.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B4130018988EF100A6E780 /* ctx.h */; };
+		A0B4130B18988F6400A6E780 /* libxlstub.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B412F518988C6100A6E780 /* libxlstub.h */; };
+		A0B4130C18988F6900A6E780 /* libxl.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B412F918988DFD00A6E780 /* libxl.h */; };
+		A0B4130D18988F6900A6E780 /* libxl_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B412FA18988DFD00A6E780 /* libxl_utils.h */; };
+		A0B4130E1898905C00A6E780 /* xenherder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F4AEB118986FC50076CCA3 /* xenherder.h */; };
+		A0B4131E1898917600A6E780 /* xenherder-mockup.c in Sources */ = {isa = PBXBuildFile; fileRef = A0F6854F189201730005BCE2 /* xenherder-mockup.c */; };
+		A0B41323189891AA00A6E780 /* libxenherder.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F685771893220C0005BCE2 /* libxenherder.dylib */; };
+		A0B41324189891AA00A6E780 /* libxlstub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B4130518988F0400A6E780 /* libxlstub.a */; };
+		A0B41327189891B800A6E780 /* libxlstub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B4130518988F0400A6E780 /* libxlstub.a */; };
+		A0B4132A1898DA6F00A6E780 /* domain.c in Sources */ = {isa = PBXBuildFile; fileRef = A0B413291898DA6F00A6E780 /* domain.c */; };
+		A0B4132C1898DA8400A6E780 /* domain.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B4132B1898DA8400A6E780 /* domain.h */; };
+		A0B4132F1898E4EF00A6E780 /* physinfo.c in Sources */ = {isa = PBXBuildFile; fileRef = A0B4132D1898E4EF00A6E780 /* physinfo.c */; };
+		A0B413301898E4EF00A6E780 /* physinfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B4132E1898E4EF00A6E780 /* physinfo.h */; };
 		A0F4AEB218986FC50076CCA3 /* xenherder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F4AEB118986FC50076CCA3 /* xenherder.h */; };
 		A0F4AEB7189874500076CCA3 /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = A0F4AEB3189874500076CCA3 /* version.c */; };
 		A0F4AEB8189874500076CCA3 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F4AEB4189874500076CCA3 /* version.h */; };
@@ -16,6 +30,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A0B4131F189891A100A6E780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0D286081892013300A37C4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0F685761893220C0005BCE2;
+			remoteInfo = xenherder;
+		};
+		A0B41321189891A100A6E780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0D286081892013300A37C4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0B4130418988F0400A6E780;
+			remoteInfo = xlstub;
+		};
+		A0B41325189891B100A6E780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0D286081892013300A37C4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0B4130418988F0400A6E780;
+			remoteInfo = xlstub;
+		};
 		A0F68562189201DB0005BCE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0F6855B189201DB0005BCE2 /* bindletools.xcodeproj */;
@@ -25,8 +60,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A0B413111898916200A6E780 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A0B412EB1898799500A6E780 /* libxenherder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libxenherder.h; sourceTree = "<group>"; };
+		A0B412F518988C6100A6E780 /* libxlstub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libxlstub.h; sourceTree = "<group>"; };
+		A0B412F618988C6100A6E780 /* libxlstub.sym */ = {isa = PBXFileReference; explicitFileType = text.script; path = libxlstub.sym; sourceTree = "<group>"; };
+		A0B412F918988DFD00A6E780 /* libxl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libxl.h; sourceTree = "<group>"; };
+		A0B412FA18988DFD00A6E780 /* libxl_utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libxl_utils.h; sourceTree = "<group>"; };
+		A0B412FF18988EF100A6E780 /* ctx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ctx.c; sourceTree = "<group>"; };
+		A0B4130018988EF100A6E780 /* ctx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ctx.h; sourceTree = "<group>"; };
+		A0B4130518988F0400A6E780 /* libxlstub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libxlstub.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0B413131898916200A6E780 /* xenherder-mockup.cgi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "xenherder-mockup.cgi"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0B413291898DA6F00A6E780 /* domain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = domain.c; sourceTree = "<group>"; };
+		A0B4132B1898DA8400A6E780 /* domain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = domain.h; sourceTree = "<group>"; };
+		A0B4132D1898E4EF00A6E780 /* physinfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = physinfo.c; sourceTree = "<group>"; };
+		A0B4132E1898E4EF00A6E780 /* physinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = physinfo.h; sourceTree = "<group>"; };
 		A0F4AEB118986FC50076CCA3 /* xenherder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = xenherder.h; sourceTree = "<group>"; };
 		A0F4AEB3189874500076CCA3 /* version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
 		A0F4AEB4189874500076CCA3 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
@@ -49,7 +108,7 @@
 		A0F6854C189201730005BCE2 /* desc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = desc.gif; sourceTree = "<group>"; };
 		A0F6854D189201730005BCE2 /* jquery.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		A0F6854E189201730005BCE2 /* jquery.tablesorter.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.tablesorter.min.js; sourceTree = "<group>"; };
-		A0F6854F189201730005BCE2 /* xenherder-cgi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "xenherder-cgi.c"; sourceTree = "<group>"; };
+		A0F6854F189201730005BCE2 /* xenherder-mockup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "xenherder-mockup.c"; sourceTree = "<group>"; };
 		A0F68550189201730005BCE2 /* xenherder.css */ = {isa = PBXFileReference; indentWidth = 8; lastKnownFileType = text.css; path = xenherder.css; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
 		A0F68551189201730005BCE2 /* xenherder.html */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text.html; path = xenherder.html; sourceTree = "<group>"; tabWidth = 2; };
 		A0F68552189201730005BCE2 /* xenherder.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = xenherder.js; sourceTree = "<group>"; };
@@ -62,16 +121,57 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A0F685741893220C0005BCE2 /* Frameworks */ = {
+		A0B4130218988F0400A6E780 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0B413101898916200A6E780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0B41323189891AA00A6E780 /* libxenherder.dylib in Frameworks */,
+				A0B41324189891AA00A6E780 /* libxlstub.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F685741893220C0005BCE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0B41327189891B800A6E780 /* libxlstub.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0B412F118988BE100A6E780 /* libxlstub */ = {
+			isa = PBXGroup;
+			children = (
+				A0B412F518988C6100A6E780 /* libxlstub.h */,
+				A0B412F618988C6100A6E780 /* libxlstub.sym */,
+				A0B412FF18988EF100A6E780 /* ctx.c */,
+				A0B4130018988EF100A6E780 /* ctx.h */,
+				A0B413291898DA6F00A6E780 /* domain.c */,
+				A0B4132B1898DA8400A6E780 /* domain.h */,
+				A0B4132D1898E4EF00A6E780 /* physinfo.c */,
+				A0B4132E1898E4EF00A6E780 /* physinfo.h */,
+			);
+			path = libxlstub;
+			sourceTree = "<group>";
+		};
+		A0B412F818988DFD00A6E780 /* libxlstub */ = {
+			isa = PBXGroup;
+			children = (
+				A0B412F918988DFD00A6E780 /* libxl.h */,
+				A0B412FA18988DFD00A6E780 /* libxl_utils.h */,
+			);
+			path = libxlstub;
+			sourceTree = "<group>";
+		};
 		A0D286071892013300A37C4D = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				A0F4AEB118986FC50076CCA3 /* xenherder.h */,
+				A0B412F818988DFD00A6E780 /* libxlstub */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -153,7 +254,7 @@
 				A0F6854C189201730005BCE2 /* desc.gif */,
 				A0F6854D189201730005BCE2 /* jquery.min.js */,
 				A0F6854E189201730005BCE2 /* jquery.tablesorter.min.js */,
-				A0F6854F189201730005BCE2 /* xenherder-cgi.c */,
+				A0F6854F189201730005BCE2 /* xenherder-mockup.c */,
 				A0F68550189201730005BCE2 /* xenherder.css */,
 				A0F68551189201730005BCE2 /* xenherder.html */,
 				A0F68552189201730005BCE2 /* xenherder.js */,
@@ -175,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				A0F6856B1892544E0005BCE2 /* libxenherder */,
+				A0B412F118988BE100A6E780 /* libxlstub */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -196,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				A0F685771893220C0005BCE2 /* libxenherder.dylib */,
+				A0B4130518988F0400A6E780 /* libxlstub.a */,
+				A0B413131898916200A6E780 /* xenherder-mockup.cgi */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +307,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		A0B4130318988F0400A6E780 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0B4130C18988F6900A6E780 /* libxl.h in Headers */,
+				A0B4130B18988F6400A6E780 /* libxlstub.h in Headers */,
+				A0B4130D18988F6900A6E780 /* libxl_utils.h in Headers */,
+				A0B4130E1898905C00A6E780 /* xenherder.h in Headers */,
+				A0B413301898E4EF00A6E780 /* physinfo.h in Headers */,
+				A0B4132C1898DA8400A6E780 /* domain.h in Headers */,
+				A0B4130A18988F6000A6E780 /* ctx.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0F685751893220C0005BCE2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,6 +335,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A0B4130418988F0400A6E780 /* xlstub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0B4130618988F0400A6E780 /* Build configuration list for PBXNativeTarget "xlstub" */;
+			buildPhases = (
+				A0B4130118988F0400A6E780 /* Sources */,
+				A0B4130218988F0400A6E780 /* Frameworks */,
+				A0B4130318988F0400A6E780 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = xlstub;
+			productName = xlstub;
+			productReference = A0B4130518988F0400A6E780 /* libxlstub.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A0B413121898916200A6E780 /* xenherder-mockup.cgi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0B413191898916300A6E780 /* Build configuration list for PBXNativeTarget "xenherder-mockup.cgi" */;
+			buildPhases = (
+				A0B4130F1898916200A6E780 /* Sources */,
+				A0B413101898916200A6E780 /* Frameworks */,
+				A0B413111898916200A6E780 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0B41320189891A100A6E780 /* PBXTargetDependency */,
+				A0B41322189891A100A6E780 /* PBXTargetDependency */,
+			);
+			name = "xenherder-mockup.cgi";
+			productName = "xenherder-mockup.cgi";
+			productReference = A0B413131898916200A6E780 /* xenherder-mockup.cgi */;
+			productType = "com.apple.product-type.tool";
+		};
 		A0F685761893220C0005BCE2 /* xenherder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0F685791893220C0005BCE2 /* Build configuration list for PBXNativeTarget "xenherder" */;
@@ -228,6 +382,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A0B41326189891B100A6E780 /* PBXTargetDependency */,
 			);
 			name = xenherder;
 			productName = xenherder;
@@ -261,6 +416,8 @@
 			projectRoot = "";
 			targets = (
 				A0F685761893220C0005BCE2 /* xenherder */,
+				A0B4130418988F0400A6E780 /* xlstub */,
+				A0B413121898916200A6E780 /* xenherder-mockup.cgi */,
 			);
 		};
 /* End PBXProject section */
@@ -276,6 +433,24 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A0B4130118988F0400A6E780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0B4130918988F6000A6E780 /* ctx.c in Sources */,
+				A0B4132A1898DA6F00A6E780 /* domain.c in Sources */,
+				A0B4132F1898E4EF00A6E780 /* physinfo.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0B4130F1898916200A6E780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0B4131E1898917600A6E780 /* xenherder-mockup.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0F685731893220C0005BCE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,16 +462,182 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A0B41320189891A100A6E780 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0F685761893220C0005BCE2 /* xenherder */;
+			targetProxy = A0B4131F189891A100A6E780 /* PBXContainerItemProxy */;
+		};
+		A0B41322189891A100A6E780 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0B4130418988F0400A6E780 /* xlstub */;
+			targetProxy = A0B41321189891A100A6E780 /* PBXContainerItemProxy */;
+		};
+		A0B41326189891B100A6E780 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0B4130418988F0400A6E780 /* xlstub */;
+			targetProxy = A0B41325189891B100A6E780 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		A0B4130718988F0400A6E780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A0B4130818988F0400A6E780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A0B4131A1898916300A6E780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A0B4131B1898916300A6E780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		A0D2860C1892013300A37C4D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					include,
+					include/libxlstub,
+				);
 			};
 			name = Debug;
 		};
 		A0D2860D1892013300A37C4D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					include,
+					include/libxlstub,
+				);
 			};
 			name = Release;
 		};
@@ -375,6 +716,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A0B4130618988F0400A6E780 /* Build configuration list for PBXNativeTarget "xlstub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0B4130718988F0400A6E780 /* Debug */,
+				A0B4130818988F0400A6E780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A0B413191898916300A6E780 /* Build configuration list for PBXNativeTarget "xenherder-mockup.cgi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0B4131A1898916300A6E780 /* Debug */,
+				A0B4131B1898916300A6E780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		A0D2860B1892013300A37C4D /* Build configuration list for PBXProject "xenherder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -61,8 +61,9 @@ lib_LTLIBRARIES				= lib/libxenherder.la
 man_MANS				=
 info_TEXINFOS				=
 noinst_DATA				=
-noinst_LTLIBRARIES			=
-noinst_HEADERS				=
+noinst_LTLIBRARIES			= lib/libxlstub.la
+noinst_HEADERS				= include/libxlstub/libxl.h \
+					  include/libxlstub/libxl_utils.h
 noinst_PROGRAMS				=
 noinst_SCRIPTS				=
 bin_PROGRAMS				=
@@ -76,7 +77,8 @@ TESTS					=
 XFAIL_TESTS				=
 EXTRA_MANS				=
 EXTRA_DIST				= \
-					  lib/libxenherder/libxenherder.sym
+					  lib/libxenherder/libxenherder.sym \
+					  lib/libxlstub/libxlstub.sym
 CLEANFILES				= \
 					  $(builddir)/a.out   $(srcdir)/a.out \
 					  $(builddir)/*/a.out $(srcdir)/*/a.out \
@@ -92,7 +94,7 @@ CLEANFILES				= \
 DISTCHECK_CONFIGURE_FLAGS		= --enable-strictwarnings
 
 
-# macros for lib/libcarrdm.la
+# macros for lib/libxenherder.la
 lib_libxenherder_la_DEPENDENCIES	= lib/libxenherder/libxenherder.sym \
 					  $(include_HEADERS) \
 					  $(pkginclude_HEADERS) \
@@ -112,6 +114,29 @@ lib_libxenherder_la_SOURCES		= $(include_HEADERS) \
 					  lib/libxenherder/cgi.h \
 					  lib/libxenherder/version.c \
 					  lib/libxenherder/version.h
+
+
+# macros for lib/libxlstub.la
+lib_libxlstub_la_DEPENDENCIES		= lib/libxlstub/libxlstub.sym \
+					  $(noinst_HEADERS) \
+					  Makefile
+lib_libxlstub_la_CPPFLAGS		= $(AM_CPPFLAGS) -I$(srcdir)/include/libxlstub
+lib_libxlstub_la_LIBADD			=
+lib_libxlstub_la_LDFLAGS		= -static \
+					  -rpath'$(libdir)'\
+					  -version-info $(LIB_VERSION_INFO) \
+					  $(AM_LDFLAGS) \
+					  -export-symbols $(srcdir)/lib/libxlstub/libxlstub.sym
+lib_libxlstub_la_SOURCES		= $(include_HEADERS) \
+					  $(pkginclude_HEADERS) \
+					  $(noinst_HEADERS) \
+					  lib/libxlstub/libxlstub.h \
+					  lib/libxlstub/ctx.c \
+					  lib/libxlstub/ctx.h \
+					  lib/libxlstub/domain.c \
+					  lib/libxlstub/domain.h \
+					  lib/libxlstub/physinfo.c \
+					  lib/libxlstub/physinfo.h
 
 
 # Makefile includes

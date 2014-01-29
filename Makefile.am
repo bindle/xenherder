@@ -47,7 +47,7 @@ AM_LDFLAGS				= -L$(top_builddir)/lib
 AM_CFLAGS				= -O2 $(CFLAGS_WARNINGS)
 AM_CXXFLAGS				= -O2 @AM_CXXFLAGS@
 AM_OBJCFLAGS				= -O2 @AM_OBJCFLAGS@
-AM_CPPFLAGS				= -O2 -UPMARK -DHAVE_CONFIG_H=1 -I$(top_builddir)/include -I$(top_srcdir)/include
+AM_CPPFLAGS				= -O2 -DHAVE_CONFIG_H=1 -I$(top_builddir)/include -I$(top_srcdir)/include
 ACLOCAL_AMFLAGS				= -I m4 -I contrib/bindletools/m4 -W all -W error
 AM_MAKEINFOFLAGS                        = --no-split
 DEFS					=
@@ -56,8 +56,8 @@ DEFS					=
 # automake targets
 check_PROGRAMS				=
 doc_DATA				=
-include_HEADERS				=
-lib_LTLIBRARIES				=
+include_HEADERS				= include/xenherder.h
+lib_LTLIBRARIES				= lib/libxenherder.la
 man_MANS				=
 info_TEXINFOS				=
 noinst_DATA				=
@@ -75,7 +75,8 @@ BUILT_SOURCES				=
 TESTS					=
 XFAIL_TESTS				=
 EXTRA_MANS				=
-EXTRA_DIST				=
+EXTRA_DIST				= \
+					  lib/libxenherder/libxenherder.sym
 CLEANFILES				= \
 					  $(builddir)/a.out   $(srcdir)/a.out \
 					  $(builddir)/*/a.out $(srcdir)/*/a.out \
@@ -89,6 +90,28 @@ CLEANFILES				= \
 					  @PACKAGE_TARNAME@-*.tar.* \
 					  @PACKAGE_TARNAME@-*.zip
 DISTCHECK_CONFIGURE_FLAGS		= --enable-strictwarnings
+
+
+# macros for lib/libcarrdm.la
+lib_libxenherder_la_DEPENDENCIES	= lib/libxenherder/libxenherder.sym \
+					  $(include_HEADERS) \
+					  $(pkginclude_HEADERS) \
+					  Makefile
+lib_libxenherder_la_CPPFLAGS		= $(AM_CPPFLAGS)
+lib_libxenherder_la_LIBADD		=
+lib_libxenherder_la_LDFLAGS		= -static \
+					  -rpath'$(libdir)'\
+					  -version-info $(LIB_VERSION_INFO) \
+					  $(AM_LDFLAGS) \
+					  -export-symbols $(srcdir)/lib/libxenherder/libxenherder.sym
+lib_libxenherder_la_SOURCES		= $(include_HEADERS) \
+					  $(pkginclude_HEADERS) \
+					  $(noinst_HEADERS) \
+					  lib/libxenherder/libxenherder.h \
+					  lib/libxenherder/cgi.c \
+					  lib/libxenherder/cgi.h \
+					  lib/libxenherder/version.c \
+					  lib/libxenherder/version.h
 
 
 # Makefile includes

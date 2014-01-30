@@ -106,23 +106,33 @@ Package Maintence Notes
 
    New Release Checklist:
 
-   * GNU GCC 4.2.1
+   * Run autogen.sh and check warnings.
+   * Run configure with strict warnings:
    * Switch to 'master' branch in Git repository.
    * Update version in configure.ac.
    * Update date and version in ChangeLog.
    * Commit configure.ac and ChangeLog changes to repository.
-   * Create tag in git repository:
+   * Create tag in git repository.
+   * Push repository to publishing server.
 
+   New Release Checklist in script form:
+
+      $ cd /path/to/source
+      $ git checkout master
+      $ vi 
+      $ git diff --stat --exit-code
       $ git tag -s v${MAJOR}.${MINOR}
-
-   * Push repository to publishing server:
-
+      $ ./autogen.sh
+      $ ./configure --enable-strictwarnings
+      $ make distcheck
       $ git push --tags origin master:master next:next pu:pu
 
    Creating Source Distribution Archives:
 
-       $ ./configure
-       $ make update
-       $ make distcheck
-       $ make dist-bzip2
+      $ cd /path/to/source
+      $ git checkout master
+      $ ./autogen.sh
+      $ ./configure --enable-strictwarnings
+      $ make distcheck
+      $ make dist-bzip2
 

@@ -98,15 +98,28 @@ LT_INIT(dlopen disable-fast-install win32-dll)
 AC_BINDLE(contrib/bindletools)
 
 # Function checks
-AC_CHECK_FUNCS([gethostname])
-AC_CHECK_FUNCS([localtime_r])
-AC_CHECK_FUNCS([uname])
+AC_FUNC_CHOWN
+AC_FUNC_MALLOC
+AC_FUNC_REALLOC
+AC_CHECK_FUNCS([gethostname],,   AC_MSG_ERROR([missing required libc function gethostname()]))
+AC_CHECK_FUNCS([localtime_r],,   AC_MSG_ERROR([missing required libc function localtime_r()]))
+AC_CHECK_FUNCS([memset],,        AC_MSG_ERROR([missing required libc function memset()]))
+AC_CHECK_FUNCS([strdup],,        AC_MSG_ERROR([missing required libc function strdup()]))
+AC_CHECK_FUNCS([uname],,         AC_MSG_ERROR([missing required libc function uname()]))
 
 # Header checks
 AC_CHECK_HEADERS([locale.h])
 
 # Type checks
+AC_TYPE_INT8_T
+AC_TYPE_INT16_T
+AC_TYPE_INT32_T
+AC_TYPE_INT64_T
 AC_TYPE_SIZE_T
+AC_TYPE_SSIZE_T
+AC_TYPE_UINT8_T
+AC_TYPE_UINT16_T
+AC_TYPE_UINT32_T
 AC_TYPE_UINT64_T
 
 # custom configure options

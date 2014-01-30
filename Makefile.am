@@ -69,7 +69,7 @@ lib_LTLIBRARIES				= lib/libxenherder.la
 man_MANS				=
 info_TEXINFOS				=
 noinst_DATA				=
-noinst_LTLIBRARIES			=
+noinst_LTLIBRARIES			= lib/libxlstub.la
 noinst_HEADERS				= include/libxlstub/libxl.h \
 					  include/libxlstub/libxl_utils.h
 noinst_PROGRAMS				=
@@ -120,6 +120,7 @@ DISTCHECK_CONFIGURE_FLAGS		= --enable-strictwarnings \
 
 # macros for lib/libxenherder.la
 lib_libxenherder_la_DEPENDENCIES	= lib/libxenherder/libxenherder.sym \
+					  lib/libxlstub.la \
 					  $(include_HEADERS) \
 					  $(pkginclude_HEADERS) \
 					  Makefile
@@ -161,14 +162,11 @@ lib_libxlstub_la_SOURCES		= $(include_HEADERS) \
 					  lib/libxlstub/domain.h \
 					  lib/libxlstub/physinfo.c \
 					  lib/libxlstub/physinfo.h
-if ENABLE_LIBXLSTUB
-noinst_LTLIBRARIES			+= lib/libxlstub.la
-endif
 
 
 # macros for src/xenherder-mockup.cgi
-src_xenherder_mockup_cgi_DEPENDENCIES	= lib/libxlstub.la
-src_xenherder_mockup_cgi_LDADD		= $(XENLIGHT_LIBS)
+src_xenherder_mockup_cgi_DEPENDENCIES	= lib/libxenherder.la
+src_xenherder_mockup_cgi_LDADD		= $(XENLIGHT_LIBS) lib/libxenherder.la
 src_xenherder_mockup_cgi_CPPFLAGS	= $(AM_CPPFLAGS) $(XENLIGHT_CPPFLAGS)
 src_xenherder_mockup_cgi_SOURCES	= src/xenherder-mockup/xenherder-mockup.c
 if ENABLE_XENHERDER_CGI

@@ -9,6 +9,8 @@
 #include <time.h>
 #include <locale.h>
 #include <string.h>
+#include <inttypes.h>
+#include <xenherder.h>
 
 int main(void);
 
@@ -17,6 +19,7 @@ int main(void)
    libxl_ctx     * ctx;
    libxl_physinfo  physinfo;
    libxl_dominfo * dominfo;
+   const xenherder_info * herderinfo;
    const libxl_version_info * xeninfo;
    int             nb_domain;
    int             i;
@@ -41,6 +44,8 @@ int main(void)
    strncat(hostname_long, ".", 512);
    len = strlen(hostname_long);
    getdomainname(&hostname_long[len], 512-(int)len);
+
+   xenherder_version(&herderinfo);
 
    if (libxl_ctx_alloc(&ctx, LIBXL_VERSION, 0, NULL) != 0)
    {
@@ -85,7 +90,7 @@ int main(void)
    printf("    <div id='page'>");
    printf("      <div id='header'>");
    printf("        <h1>%s</h1>", hostname_long);
-   printf("        <h2>Xen Herder</h2>");
+   printf("        <h2>Xen Herder Mockup</h2>");
    printf("      </div><!-- #header (end) -->");
    printf("      <div id='navbar'>");
    printf("        <ul>");
@@ -169,7 +174,11 @@ int main(void)
    printf("      </div><!-- #content (end) -->\n");
    printf("      <div id='footer'>\n");
    printf("        <div id='javascript_warning'>Royce, enable JavaScript for advanced user features.</div>\n");
-   printf("        <p>Powered by Xen Herder Prototype</p>\n");
+   printf("        <p>Xen Herder %" PRIu64 ".%" PRIu64 ".%" PRIu64 " (%s)</p>\n",
+      herderinfo->version_major,
+      herderinfo->version_minor,
+      herderinfo->version_patch,
+      herderinfo->version_build);
    printf("      </div><!-- #footer (end) -->\n");
    printf("    </div><!-- #page (end) -->\n");
    printf("  </body>\n");

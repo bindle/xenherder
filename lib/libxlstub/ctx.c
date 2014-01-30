@@ -85,7 +85,7 @@ int libxl_ctx_alloc (libxl_ctx ** pctx, int version, unsigned flags,
 
    (*pctx)->version.xen_version_major = 4;
    (*pctx)->version.xen_version_minor = 3;
-   (*pctx)->version.xen_version_extra = strdup(" libxlstub from xenherder");
+   (*pctx)->version.xen_version_extra = strdup(".stub");
 
    (*pctx)->physinfo.threads_per_core     = 4;
    (*pctx)->physinfo.cores_per_socket     = 6;

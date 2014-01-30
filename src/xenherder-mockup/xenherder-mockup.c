@@ -167,7 +167,7 @@ int main(void)
    };
    printf("            </tbody>\n");
    printf("            <tfoot>\n");
-   printf("              <tr><th colspan=8 class='cmdhint'>xl -v list -n</th></tr>\n");
+   printf("              <tr><th colspan=8 class='cmdhint'>xl -v list -n<br>xentop</th></tr>\n");
    printf("            </tfoot>\n");
    printf("          </table>\n");
    printf("        </div><!-- #article (end) -->\n");

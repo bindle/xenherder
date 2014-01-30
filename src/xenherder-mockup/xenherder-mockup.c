@@ -174,7 +174,7 @@ int main(void)
    printf("      </div><!-- #content (end) -->\n");
    printf("      <div id='footer'>\n");
    printf("        <div id='javascript_warning'>Royce, enable JavaScript for advanced user features.</div>\n");
-   printf("        <p>Xen Herder %" PRIu64 ".%" PRIu64 ".%" PRIu64 " (%s)</p>\n",
+   printf("        <p><a href='https://github.com/bindle/xenherder'>Xen Herder %" PRIu64 ".%" PRIu64 ".%" PRIu64 " (%s)</a></p>\n",
       herderinfo->version_major,
       herderinfo->version_minor,
       herderinfo->version_patch,

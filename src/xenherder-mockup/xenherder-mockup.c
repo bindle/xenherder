@@ -159,8 +159,8 @@ int main(void)
       printf("<td>%i</td>", dominfo[i].domid);
       printf("<td>Running</td>");
       printf("<td>unknown</td>");
-      printf("<td>%llu</td>", dominfo[i].current_memkb / 1024);
-      printf("<td>%llu</td>", (dominfo[i].outstanding_memkb+dominfo[i].current_memkb) / 1024);
+      printf("<td>%"PRIu64"</td>", dominfo[i].current_memkb / 1024);
+      printf("<td>%"PRIu64"</td>", (dominfo[i].outstanding_memkb+dominfo[i].current_memkb) / 1024);
       printf("<td>%i</td>", dominfo[i].vcpu_online);
       printf("<td>%.1f</td></tr>\n", ((float)dominfo[i].cpu_time / 1e9));
       free(domname);

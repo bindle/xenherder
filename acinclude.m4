@@ -73,7 +73,7 @@ AC_DEFUN([AC_XENHERDER_LIBXENLIGHT],[dnl
    XENLIGHT_CFLAGS=""
    XENLIGHT_CPPFLAGS=""
    XENLIGHT_LDFLAGS=""
-   XENLIGHT_LIBS="xenlight"
+   XENLIGHT_LIBS=""
 
    # saves old parameters
    OLD_CFLAGS=${CFLAGS}
@@ -128,6 +128,7 @@ AC_DEFUN([AC_XENHERDER_LIBXENLIGHT],[dnl
    # checks for libxenlight
    if test "x${ENABLE_XENLIGHT}" != "xno";then
       HAVE_XENLIGHT="yes"
+      XENLIGHT_LIBS="-lxenlight"
 
       # checks for sqlite3-includedir
       if test "x${WITH_XENLIGHT_INCLUDEDIR}" != "x" && \

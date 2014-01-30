@@ -41,6 +41,10 @@ SUBDIRS					=
 DIST_SUBDIRS				=
 
 
+# non-standard directories
+cgibindir				= $(pkglibexecdir)/cgi-bin
+
+
 # Global flags
 AM_LIBS					=
 AM_LDFLAGS				= -L$(top_builddir)/lib
@@ -61,7 +65,7 @@ lib_LTLIBRARIES				= lib/libxenherder.la
 man_MANS				=
 info_TEXINFOS				=
 noinst_DATA				=
-noinst_LTLIBRARIES			= lib/libxlstub.la
+noinst_LTLIBRARIES			=
 noinst_HEADERS				= include/libxlstub/libxl.h \
 					  include/libxlstub/libxl_utils.h
 noinst_PROGRAMS				=
@@ -69,6 +73,7 @@ noinst_SCRIPTS				=
 bin_PROGRAMS				=
 bin_SCRIPTS				=
 sbin_SCRIPTS				=
+cgibin_PROGRAMS				=
 
 
 # lists
@@ -91,7 +96,8 @@ CLEANFILES				= \
 					  $(noinst_SCRIPTS) \
 					  @PACKAGE_TARNAME@-*.tar.* \
 					  @PACKAGE_TARNAME@-*.zip
-DISTCHECK_CONFIGURE_FLAGS		= --enable-strictwarnings
+DISTCHECK_CONFIGURE_FLAGS		= --enable-strictwarnings \
+					  --enable-libxlstub
 
 
 # macros for lib/libxenherder.la
@@ -137,6 +143,19 @@ lib_libxlstub_la_SOURCES		= $(include_HEADERS) \
 					  lib/libxlstub/domain.h \
 					  lib/libxlstub/physinfo.c \
 					  lib/libxlstub/physinfo.h
+if ENABLE_LIBXLSTUB
+noinst_LTLIBRARIES			+= lib/libxlstub.la
+endif
+
+
+# macros for src/xenherder-mockup.cgi
+src_xenherder_mockup_cgi_DEPENDENCIES	= lib/libxlstub.la
+src_xenherder_mockup_cgi_LDADD		= $(XENLIGHT_LIBS)
+src_xenherder_mockup_cgi_CPPFLAGS	= $(AM_CPPFLAGS) $(XENLIGHT_CPPFLAGS)
+src_xenherder_mockup_cgi_SOURCES	= src/xenherder-mockup.c
+if ENABLE_LIBXLSTUB
+cgibin_PROGRAMS				+= src/xenherder-mockup.cgi
+endif
 
 
 # Makefile includes

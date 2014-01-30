@@ -723,6 +723,7 @@
 				A0B4130818988F0400A6E780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0B413191898916300A6E780 /* Build configuration list for PBXNativeTarget "xenherder-mockup.cgi" */ = {
 			isa = XCConfigurationList;
@@ -731,6 +732,7 @@
 				A0B4131B1898916300A6E780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0D2860B1892013300A37C4D /* Build configuration list for PBXProject "xenherder" */ = {
 			isa = XCConfigurationList;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0323995189A2FB6006DA6C1 /* xenherder-mockup.c in Sources */ = {isa = PBXBuildFile; fileRef = A0323994189A2FAD006DA6C1 /* xenherder-mockup.c */; };
 		A0B412EC1898799500A6E780 /* libxenherder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B412EB1898799500A6E780 /* libxenherder.h */; };
 		A0B4130918988F6000A6E780 /* ctx.c in Sources */ = {isa = PBXBuildFile; fileRef = A0B412FF18988EF100A6E780 /* ctx.c */; };
 		A0B4130A18988F6000A6E780 /* ctx.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B4130018988EF100A6E780 /* ctx.h */; };
@@ -14,7 +15,6 @@
 		A0B4130C18988F6900A6E780 /* libxl.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B412F918988DFD00A6E780 /* libxl.h */; };
 		A0B4130D18988F6900A6E780 /* libxl_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B412FA18988DFD00A6E780 /* libxl_utils.h */; };
 		A0B4130E1898905C00A6E780 /* xenherder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F4AEB118986FC50076CCA3 /* xenherder.h */; };
-		A0B4131E1898917600A6E780 /* xenherder-mockup.c in Sources */ = {isa = PBXBuildFile; fileRef = A0F6854F189201730005BCE2 /* xenherder-mockup.c */; };
 		A0B41323189891AA00A6E780 /* libxenherder.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F685771893220C0005BCE2 /* libxenherder.dylib */; };
 		A0B41324189891AA00A6E780 /* libxlstub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B4130518988F0400A6E780 /* libxlstub.a */; };
 		A0B41327189891B800A6E780 /* libxlstub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B4130518988F0400A6E780 /* libxlstub.a */; };
@@ -73,6 +73,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A0323989189A2FAD006DA6C1 /* jquery.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
+		A032398A189A2FAD006DA6C1 /* jquery.tablesorter.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.tablesorter.min.js; sourceTree = "<group>"; };
+		A032398B189A2FAD006DA6C1 /* xenherder.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = xenherder.js; sourceTree = "<group>"; };
+		A032398E189A2FAD006DA6C1 /* asc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = asc.gif; sourceTree = "<group>"; };
+		A032398F189A2FAD006DA6C1 /* bg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bg.gif; sourceTree = "<group>"; };
+		A0323990189A2FAD006DA6C1 /* desc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = desc.gif; sourceTree = "<group>"; };
+		A0323991189A2FAD006DA6C1 /* xenherder.css */ = {isa = PBXFileReference; indentWidth = 8; lastKnownFileType = text.css; path = xenherder.css; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
+		A0323992189A2FAD006DA6C1 /* xenherder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = xenherder.html; sourceTree = "<group>"; };
+		A0323994189A2FAD006DA6C1 /* xenherder-mockup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "xenherder-mockup.c"; sourceTree = "<group>"; };
 		A0B412EB1898799500A6E780 /* libxenherder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libxenherder.h; sourceTree = "<group>"; };
 		A0B412F518988C6100A6E780 /* libxlstub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libxlstub.h; sourceTree = "<group>"; };
 		A0B412F618988C6100A6E780 /* libxlstub.sym */ = {isa = PBXFileReference; explicitFileType = text.script; path = libxlstub.sym; sourceTree = "<group>"; };
@@ -102,18 +111,6 @@
 		A0F684EB189201730005BCE2 /* configure.ac */ = {isa = PBXFileReference; explicitFileType = text.script; path = configure.ac; sourceTree = "<group>"; };
 		A0F68536189201730005BCE2 /* cgi-pathinfo.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = "cgi-pathinfo.md"; sourceTree = "<group>"; };
 		A0F68537189201730005BCE2 /* terms.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = terms.md; sourceTree = "<group>"; };
-		A0F68549189201730005BCE2 /* Makefile */ = {isa = PBXFileReference; indentWidth = 8; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
-		A0F6854A189201730005BCE2 /* asc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = asc.gif; sourceTree = "<group>"; };
-		A0F6854B189201730005BCE2 /* bg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bg.gif; sourceTree = "<group>"; };
-		A0F6854C189201730005BCE2 /* desc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = desc.gif; sourceTree = "<group>"; };
-		A0F6854D189201730005BCE2 /* jquery.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
-		A0F6854E189201730005BCE2 /* jquery.tablesorter.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.tablesorter.min.js; sourceTree = "<group>"; };
-		A0F6854F189201730005BCE2 /* xenherder-mockup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "xenherder-mockup.c"; sourceTree = "<group>"; };
-		A0F68550189201730005BCE2 /* xenherder.css */ = {isa = PBXFileReference; indentWidth = 8; lastKnownFileType = text.css; path = xenherder.css; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
-		A0F68551189201730005BCE2 /* xenherder.html */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text.html; path = xenherder.html; sourceTree = "<group>"; tabWidth = 2; };
-		A0F68552189201730005BCE2 /* xenherder.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = xenherder.js; sourceTree = "<group>"; };
-		A0F68553189201730005BCE2 /* xenherder.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = xenherder.min.css; sourceTree = "<group>"; };
-		A0F68554189201730005BCE2 /* xenherder.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = xenherder.min.js; sourceTree = "<group>"; };
 		A0F6855B189201DB0005BCE2 /* bindletools.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = bindletools.xcodeproj; path = bindletools/bindletools.xcodeproj; sourceTree = "<group>"; };
 		A0F685771893220C0005BCE2 /* libxenherder.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libxenherder.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F6857C1893223C0005BCE2 /* cgi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cgi.c; sourceTree = "<group>"; };
@@ -148,6 +145,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0323988189A2FAD006DA6C1 /* htdocs-js */ = {
+			isa = PBXGroup;
+			children = (
+				A0323989189A2FAD006DA6C1 /* jquery.min.js */,
+				A032398A189A2FAD006DA6C1 /* jquery.tablesorter.min.js */,
+				A032398B189A2FAD006DA6C1 /* xenherder.js */,
+			);
+			path = "htdocs-js";
+			sourceTree = "<group>";
+		};
+		A032398C189A2FAD006DA6C1 /* htdocs-themes */ = {
+			isa = PBXGroup;
+			children = (
+				A032398E189A2FAD006DA6C1 /* asc.gif */,
+				A032398F189A2FAD006DA6C1 /* bg.gif */,
+				A0323990189A2FAD006DA6C1 /* desc.gif */,
+				A0323991189A2FAD006DA6C1 /* xenherder.css */,
+				A0323992189A2FAD006DA6C1 /* xenherder.html */,
+			);
+			path = "htdocs-themes";
+			sourceTree = "<group>";
+		};
+		A0323993189A2FAD006DA6C1 /* xenherder-mockup */ = {
+			isa = PBXGroup;
+			children = (
+				A0323994189A2FAD006DA6C1 /* xenherder-mockup.c */,
+			);
+			path = "xenherder-mockup";
+			sourceTree = "<group>";
+		};
 		A0B412F118988BE100A6E780 /* libxlstub */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,18 +275,9 @@
 		A0F68548189201730005BCE2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				A0F68549189201730005BCE2 /* Makefile */,
-				A0F6854A189201730005BCE2 /* asc.gif */,
-				A0F6854B189201730005BCE2 /* bg.gif */,
-				A0F6854C189201730005BCE2 /* desc.gif */,
-				A0F6854D189201730005BCE2 /* jquery.min.js */,
-				A0F6854E189201730005BCE2 /* jquery.tablesorter.min.js */,
-				A0F6854F189201730005BCE2 /* xenherder-mockup.c */,
-				A0F68550189201730005BCE2 /* xenherder.css */,
-				A0F68551189201730005BCE2 /* xenherder.html */,
-				A0F68552189201730005BCE2 /* xenherder.js */,
-				A0F68553189201730005BCE2 /* xenherder.min.css */,
-				A0F68554189201730005BCE2 /* xenherder.min.js */,
+				A0323988189A2FAD006DA6C1 /* htdocs-js */,
+				A032398C189A2FAD006DA6C1 /* htdocs-themes */,
+				A0323993189A2FAD006DA6C1 /* xenherder-mockup */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -447,7 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B4131E1898917600A6E780 /* xenherder-mockup.c in Sources */,
+				A0323995189A2FB6006DA6C1 /* xenherder-mockup.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

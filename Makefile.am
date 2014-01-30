@@ -43,6 +43,10 @@ DIST_SUBDIRS				=
 
 # non-standard directories
 cgibindir				= $(pkglibexecdir)/cgi-bin
+htdocsdir				= $(htmldir)
+htmljsdir				= $(htdocsdir)/js
+htmlthemedir				= $(htdocsdir)/themes
+htmlthemedefaultdir			= $(htmlthemedir)/default
 
 
 # Global flags
@@ -74,6 +78,8 @@ bin_PROGRAMS				=
 bin_SCRIPTS				=
 sbin_SCRIPTS				=
 cgibin_PROGRAMS				=
+htmljs_DATA				=
+htmlthemedefault_DATA			=
 
 
 # lists
@@ -83,13 +89,25 @@ XFAIL_TESTS				=
 EXTRA_MANS				=
 EXTRA_DIST				= \
 					  lib/libxenherder/libxenherder.sym \
-					  lib/libxlstub/libxlstub.sym
+					  lib/libxlstub/libxlstub.sym \
+					  src/htdocs-js/jquery.tablesorter.min.js \
+					  src/htdocs-js/jquery.min.js \
+					  src/htdocs-js/xenherder.js \
+					  src/htdocs-themes/asc.gif \
+					  src/htdocs-themes/bg.gif \
+					  src/htdocs-themes/desc.gif \
+					  src/htdocs-themes/xenherder.css \
+					  src/htdocs-themes/xenherder.html
 CLEANFILES				= \
 					  $(builddir)/a.out   $(srcdir)/a.out \
 					  $(builddir)/*/a.out $(srcdir)/*/a.out \
 					  autoscan.log $(srcdir)/autoscan.log \
 					  config.h.in~ $(srcdir)/config.h.in~ \
 					  configure.scan $(srcdir)/configure.scan \
+					  src/htdocs-js/xenherder.min.js \
+					  src/htdocs-js/xenherder.min.js.tmp \
+					  src/htdocs-themes/xenherder.min.css \
+					  src/htdocs-themes/xenherder.min.css.tmp \
 					  $(man_MANS) \
 					  $(bin_SCRIPTS) \
 					  $(sbin_SCRIPTS) \
@@ -106,7 +124,7 @@ lib_libxenherder_la_DEPENDENCIES	= lib/libxenherder/libxenherder.sym \
 					  $(pkginclude_HEADERS) \
 					  Makefile
 lib_libxenherder_la_CPPFLAGS		= $(AM_CPPFLAGS)
-lib_libxenherder_la_LIBADD		=
+lib_libxenherder_la_LIBS		= $(XENLIGHT_LIBS)
 lib_libxenherder_la_LDFLAGS		= -static \
 					  -rpath'$(libdir)'\
 					  -version-info $(LIB_VERSION_INFO) \
@@ -152,9 +170,22 @@ endif
 src_xenherder_mockup_cgi_DEPENDENCIES	= lib/libxlstub.la
 src_xenherder_mockup_cgi_LDADD		= $(XENLIGHT_LIBS)
 src_xenherder_mockup_cgi_CPPFLAGS	= $(AM_CPPFLAGS) $(XENLIGHT_CPPFLAGS)
-src_xenherder_mockup_cgi_SOURCES	= src/xenherder-mockup.c
+src_xenherder_mockup_cgi_SOURCES	= src/xenherder-mockup/xenherder-mockup.c
+if ENABLE_XENHERDER_CGI
 if ENABLE_LIBXLSTUB
 cgibin_PROGRAMS				+= src/xenherder-mockup.cgi
+endif
+endif
+
+
+# macros for HTML
+if ENABLE_XENHERDER_CGI
+htmljs_DATA				+= src/htdocs-js/xenherder.min.js
+htmlthemedefault_DATA			+= src/htdocs-themes/asc.gif
+htmlthemedefault_DATA			+= src/htdocs-themes/bg.gif
+htmlthemedefault_DATA			+= src/htdocs-themes/desc.gif
+htmlthemedefault_DATA			+= src/htdocs-themes/xenherder.html
+htmlthemedefault_DATA			+= src/htdocs-themes/xenherder.min.css
 endif
 
 
@@ -168,6 +199,38 @@ include $(srcdir)/@bindletools_srcdir@/build-aux/makefile-version.am
 
 # custom targets
 .PHONY:
+
+src/htdocs-js/xenherder.min.js: Makefile src/htdocs-js/xenherder.js
+	mkdir -p src/htdocs-js
+	rm -f $(@)
+	sed -e 's,//.*$$,,g' \
+	   -e 's/^ *//g' \
+	   -e 's/ *$$//g' \
+	   -e 's,/\*.*\*/,,g' \
+	   $(srcdir)/src/htdocs-js/xenherder.js \
+	   |grep -v '^$$' \
+	   |sed -e ':a' -e 'N' -e '$$!ba' -e 's/\([{;]\)\n/\1/g' \
+	   >> $(@).tmp
+	cat \
+	   $(srcdir)/src/htdocs-js/jquery.min.js \
+	   $(srcdir)/src/htdocs-js/jquery.tablesorter.min.js \
+	   $(@).tmp \
+	   > $(@)
+
+
+src/htdocs-themes/xenherder.min.css: Makefile src/htdocs-themes/xenherder.css
+	mkdir -p src/htdocs-themes
+	rm -f $(@)
+	sed -e 's,//.*$$,,g' \
+	   -e 's/^[[:space:]]*//g' \
+	   -e 's/[[:space:]]*$$//g' \
+	   -e 's/:[[:space:]]*/:/g' \
+	   -e 's/[[:space:]]\{2,\}/ /g' \
+	   -e 's,/\*.*\*/,,g' \
+	   $(srcdir)/src/htdocs-themes/xenherder.css \
+	   |grep -v '^$$' \
+	   |sed -e ':a' -e 'N' -e '$$!ba' -e 's/\([{;]\)\n/\1/g' \
+	   > $(@)
 
 
 # local targets

@@ -125,6 +125,7 @@ AC_TYPE_UINT64_T
 # custom configure options
 AC_BINDLE_ENABLE_WARNINGS
 AC_XENHERDER_LIBXENLIGHT
+AC_XENHERDER_CGI
 
 # determine PACKAGE_VERSION via Git
 AC_BINDLE_GIT_PACKAGE_VERSION([contrib/bindletools/build-aux/git-package-version.sh])
@@ -144,12 +145,12 @@ AC_MSG_NOTICE([   inet sockets:        todo])
 AC_MSG_NOTICE([   inet6 sockets:       todo])
 AC_MSG_NOTICE([   unix sockets:        todo])
 AC_MSG_NOTICE([])
-AC_MSG_NOTICE([Components:])
-AC_MSG_NOTICE([   Xen Herder library:  yes])
+AC_MSG_NOTICE([Install Components:])
 AC_MSG_NOTICE([   xenlight stub:       ${ENABLE_LIBXLSTUB}])
+AC_MSG_NOTICE([   library:             yes])
 AC_MSG_NOTICE([   daemon:              no])
 AC_MSG_NOTICE([   CLI tools:           no])
-AC_MSG_NOTICE([   CGI tools:           ${HAVE_XENLIGHT}])
+AC_MSG_NOTICE([   CGI portal:          ${ENABLE_XENHERDER_CGI}])
 AC_MSG_NOTICE([   docs:                no])
 AC_MSG_NOTICE([])
 AC_MSG_NOTICE([Compile Options:])

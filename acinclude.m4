@@ -37,6 +37,32 @@
 
 # AC_XENHERDER_LIBXENLIGHT()
 # ______________________________________________________________________________
+AC_DEFUN([AC_XENHERDER_CGI],[dnl
+
+   # prerequists
+   AC_REQUIRE([AC_PROG_CC])
+
+   # display options
+   enableval=""
+   AC_ARG_ENABLE(
+      cgi-portal,
+      [AS_HELP_STRING([--enable-cgi-portal], [enable CGI web portal (default: auto)])],
+      [ ENABLE_XENHERDER_CGI=$enableval ],
+      [ ENABLE_XENHERDER_CGI=$enableval ]
+   )
+
+   # checks for libxlstub
+   if test "x${ENABLE_XENHERDER_CGI}" != "xno";then
+      ENABLE_XENHERDER_CGI="yes"
+   fi
+
+   # Automake conditionals
+   AM_CONDITIONAL([ENABLE_XENHERDER_CGI], [test x$ENABLE_XENHERDER_CGI = xyes])
+])dnl
+
+
+# AC_XENHERDER_LIBXENLIGHT()
+# ______________________________________________________________________________
 AC_DEFUN([AC_XENHERDER_LIBXENLIGHT],[dnl
 
    # prerequists

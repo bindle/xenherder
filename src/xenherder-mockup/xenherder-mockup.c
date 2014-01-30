@@ -78,8 +78,8 @@ int main(void)
    printf("  <head>");
    printf("    <title>Xen Herder (%s)</title>", hostname_long);
    printf("    <meta charset='UTF-8'>");
-   printf("    <link href='xenherder.min.css' rel='stylesheet'>\n");
-   printf("    <script src='xenherder.min.js'></script>\n");
+   printf("    <link href='/xenherder/layout/themes/default/xenherder.min.css' rel='stylesheet'>\n");
+   printf("    <script src='/xenherder/layout/js/xenherder.min.js'></script>\n");
    printf("  </head>");
    printf("  <body>");
    printf("    <div id='page'>");

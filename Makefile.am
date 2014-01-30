@@ -170,7 +170,7 @@ src_xenherder_mockup_cgi_LDADD		= $(XENLIGHT_LIBS) lib/libxenherder.la
 src_xenherder_mockup_cgi_CPPFLAGS	= $(AM_CPPFLAGS) $(XENLIGHT_CPPFLAGS)
 src_xenherder_mockup_cgi_SOURCES	= src/xenherder-mockup/xenherder-mockup.c
 if ENABLE_XENHERDER_CGI
-if ENABLE_LIBXLSTUB
+if HAVE_XENLIGHT
 cgibin_PROGRAMS				+= src/xenherder-mockup.cgi
 endif
 endif

@@ -102,6 +102,7 @@ int libxl_ctx_alloc (libxl_ctx ** pctx, int version, unsigned flags,
    (*pctx)->physinfo.cap_hvm              = 1;
    (*pctx)->physinfo.cap_hvm_directio     = 1;
 
+   (*pctx)->nb_domain                = 3;
    (*pctx)->dominfo[0].domid         = 0;
    (*pctx)->dominfo[0].blocked       = 1;
    (*pctx)->dominfo[0].max_memkb     = (1024*1024);
@@ -122,8 +123,8 @@ int libxl_ctx_alloc (libxl_ctx ** pctx, int version, unsigned flags,
    (*pctx)->dominfo[2].vcpu_max_id   = 8;
 
    (*pctx)->domnames[0] = "Domain-0";
-   (*pctx)->domnames[0] = "foo";
-   (*pctx)->domnames[0] = "bar";
+   (*pctx)->domnames[1] = "foo";
+   (*pctx)->domnames[2] = "bar";
 
    return(0);
 }

@@ -232,7 +232,13 @@ src/htdocs-themes/xenherder.min.css: Makefile src/htdocs-themes/xenherder.css
 
 
 # local targets
+install-exec-hook:
+
 install-exec-local:
+
+install-data-hook:
+	test ! -f $(DESTDIR)/$(cgibindir)/xenherder-mockup.cgi \
+	   || chmod u+s $(DESTDIR)/$(cgibindir)/xenherder-mockup.cgi
 
 install-data-local:
 

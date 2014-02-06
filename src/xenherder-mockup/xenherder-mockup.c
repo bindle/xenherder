@@ -124,12 +124,13 @@ int main(void)
    printf("        <div class='article'>\n");
    printf("          <table>\n");
    printf("            <thead>\n");
-   printf("              <tr><th>Host</th><th>Xen</th><th>OS</th><th>Domains</th><th>vCPU</th><th>CPU Cores</th><th>Threads/Core</th><th>Free Mem</th><th>Total Mem</th></tr>\n");
+   printf("              <tr><th>Host</th><th>Xen</th><th>Herder</th><th>OS</th><th>Domains</th><th>vCPU</th><th>CPU Cores</th><th>Threads/Core</th><th>Free Mem</th><th>Total Mem</th></tr>\n");
    printf("            </thead>\n");
    printf("            <tbody>\n");
    printf("              <tr>");
    printf("<td><a href='/'>%s</a></td>", hostname);
    printf("<td>%i.%i%s</td>", xeninfo->xen_version_major, xeninfo->xen_version_minor, xeninfo->xen_version_extra);
+   printf("<td>%" PRIu64 ".%" PRIu64 ".%" PRIu64 "</td>", herderinfo->version_major, herderinfo->version_minor, herderinfo->version_patch);
    printf("<td>%s %s</td>", utsbuf.sysname, utsbuf.release);
    printf("<td>%i</td>", nb_domain);
    printf("<td>%i</td>", count_vcpu);
@@ -140,7 +141,7 @@ int main(void)
    printf("</tr>\n");
    printf("            </tbody>\n");
    printf("            <tfoot>\n");
-   printf("              <tr><th colspan=9 class='cmdhint'>xl -v info -n</th></tr>\n");
+   printf("              <tr><th colspan=10 class='cmdhint'>xl -v info -n</th></tr>\n");
    printf("            </tfoot>\n");
    printf("          </table>\n");
    printf("        </div><!-- #article (end) -->\n");

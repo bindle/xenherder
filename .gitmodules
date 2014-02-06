@@ -3,4 +3,4 @@
 	url = git://github.com/bindle/bindletools.git
 [submodule "contrib/carrdm"]
 	path = contrib/carrdm
-	url = git@github.com:/bindle/carrdm.git
+	url = git://github.com/bindle/carrdm.git

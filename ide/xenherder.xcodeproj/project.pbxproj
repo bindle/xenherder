@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A0323995189A2FB6006DA6C1 /* xenherder-mockup.c in Sources */ = {isa = PBXBuildFile; fileRef = A0323994189A2FAD006DA6C1 /* xenherder-mockup.c */; };
+		A07C8C1D18A3764200F8C37C /* libcarrdm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A07C8C1618A3762300F8C37C /* libcarrdm.a */; };
 		A0B412EC1898799500A6E780 /* libxenherder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B412EB1898799500A6E780 /* libxenherder.h */; };
 		A0B4130918988F6000A6E780 /* ctx.c in Sources */ = {isa = PBXBuildFile; fileRef = A0B412FF18988EF100A6E780 /* ctx.c */; };
 		A0B4130A18988F6000A6E780 /* ctx.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B4130018988EF100A6E780 /* ctx.h */; };
@@ -30,6 +31,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A07C8C1518A3762300F8C37C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A07C8C0918A3762300F8C37C /* carrdm.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0F618D717E93D0500D7B9D6;
+			remoteInfo = "carrdm-ios";
+		};
+		A07C8C1718A3762300F8C37C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A07C8C0918A3762300F8C37C /* carrdm.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0F6190417E93D9000D7B9D6;
+			remoteInfo = "carrdm-osx";
+		};
+		A07C8C1918A3762300F8C37C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A07C8C0918A3762300F8C37C /* carrdm.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0C06D2F17DB7E30000DCB6A;
+			remoteInfo = "test-array01";
+		};
+		A07C8C1B18A3763B00F8C37C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A07C8C0918A3762300F8C37C /* carrdm.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A0F6190317E93D9000D7B9D6;
+			remoteInfo = "carrdm-osx";
+		};
 		A0B4131F189891A100A6E780 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0D286081892013300A37C4D /* Project object */;
@@ -82,6 +111,7 @@
 		A0323991189A2FAD006DA6C1 /* xenherder.css */ = {isa = PBXFileReference; indentWidth = 8; lastKnownFileType = text.css; path = xenherder.css; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
 		A0323992189A2FAD006DA6C1 /* xenherder.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = xenherder.html; sourceTree = "<group>"; };
 		A0323994189A2FAD006DA6C1 /* xenherder-mockup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "xenherder-mockup.c"; sourceTree = "<group>"; };
+		A07C8C0918A3762300F8C37C /* carrdm.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = carrdm.xcodeproj; path = carrdm/carrdm.xcodeproj; sourceTree = "<group>"; };
 		A0B412EB1898799500A6E780 /* libxenherder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libxenherder.h; sourceTree = "<group>"; };
 		A0B412F518988C6100A6E780 /* libxlstub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libxlstub.h; sourceTree = "<group>"; };
 		A0B412F618988C6100A6E780 /* libxlstub.sym */ = {isa = PBXFileReference; explicitFileType = text.script; path = libxlstub.sym; sourceTree = "<group>"; };
@@ -138,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07C8C1D18A3764200F8C37C /* libcarrdm.a in Frameworks */,
 				A0B41327189891B800A6E780 /* libxlstub.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +204,16 @@
 				A0323994189A2FAD006DA6C1 /* xenherder-mockup.c */,
 			);
 			path = "xenherder-mockup";
+			sourceTree = "<group>";
+		};
+		A07C8C0A18A3762300F8C37C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A07C8C1618A3762300F8C37C /* libcarrdm.a */,
+				A07C8C1818A3762300F8C37C /* libcarrdm.a */,
+				A07C8C1A18A3762300F8C37C /* test-array01 */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A0B412F118988BE100A6E780 /* libxlstub */ = {
@@ -243,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				A0F6855B189201DB0005BCE2 /* bindletools.xcodeproj */,
+				A07C8C0918A3762300F8C37C /* carrdm.xcodeproj */,
 			);
 			path = contrib;
 			sourceTree = "<group>";
@@ -400,6 +442,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A07C8C1C18A3763B00F8C37C /* PBXTargetDependency */,
 				A0B41326189891B100A6E780 /* PBXTargetDependency */,
 			);
 			name = xenherder;
@@ -430,6 +473,10 @@
 					ProductGroup = A0F6855C189201DB0005BCE2 /* Products */;
 					ProjectRef = A0F6855B189201DB0005BCE2 /* bindletools.xcodeproj */;
 				},
+				{
+					ProductGroup = A07C8C0A18A3762300F8C37C /* Products */;
+					ProjectRef = A07C8C0918A3762300F8C37C /* carrdm.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -441,6 +488,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		A07C8C1618A3762300F8C37C /* libcarrdm.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcarrdm.a;
+			remoteRef = A07C8C1518A3762300F8C37C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A07C8C1818A3762300F8C37C /* libcarrdm.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcarrdm.a;
+			remoteRef = A07C8C1718A3762300F8C37C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A07C8C1A18A3762300F8C37C /* test-array01 */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "test-array01";
+			remoteRef = A07C8C1918A3762300F8C37C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		A0F68563189201DB0005BCE2 /* libbindle.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -481,6 +549,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A07C8C1C18A3763B00F8C37C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "carrdm-osx";
+			targetProxy = A07C8C1B18A3763B00F8C37C /* PBXContainerItemProxy */;
+		};
 		A0B41320189891A100A6E780 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A0F685761893220C0005BCE2 /* xenherder */;

@@ -176,17 +176,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A0323988189A2FAD006DA6C1 /* htdocs-js */ = {
+		A0323988189A2FAD006DA6C1 /* js */ = {
 			isa = PBXGroup;
 			children = (
 				A0323989189A2FAD006DA6C1 /* jquery.min.js */,
 				A032398A189A2FAD006DA6C1 /* jquery.tablesorter.min.js */,
 				A032398B189A2FAD006DA6C1 /* xenherder.js */,
 			);
-			path = "htdocs-js";
+			path = js;
 			sourceTree = "<group>";
 		};
-		A032398C189A2FAD006DA6C1 /* htdocs-themes */ = {
+		A032398C189A2FAD006DA6C1 /* default */ = {
 			isa = PBXGroup;
 			children = (
 				A032398E189A2FAD006DA6C1 /* asc.gif */,
@@ -195,7 +195,7 @@
 				A0323991189A2FAD006DA6C1 /* xenherder.css */,
 				A0323992189A2FAD006DA6C1 /* xenherder.html */,
 			);
-			path = "htdocs-themes";
+			path = default;
 			sourceTree = "<group>";
 		};
 		A0323993189A2FAD006DA6C1 /* xenherder-mockup */ = {
@@ -246,6 +246,23 @@
 				A0F684CE189201730005BCE2 /* xenherder */,
 				A0F685781893220C0005BCE2 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		A0E3BAD818B15E6C0037DADD /* html */ = {
+			isa = PBXGroup;
+			children = (
+				A0E3BAE018B15E7E0037DADD /* themes */,
+				A0323988189A2FAD006DA6C1 /* js */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
+		A0E3BAE018B15E7E0037DADD /* themes */ = {
+			isa = PBXGroup;
+			children = (
+				A032398C189A2FAD006DA6C1 /* default */,
+			);
+			path = themes;
 			sourceTree = "<group>";
 		};
 		A0F684CE189201730005BCE2 /* xenherder */ = {
@@ -317,8 +334,7 @@
 		A0F68548189201730005BCE2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				A0323988189A2FAD006DA6C1 /* htdocs-js */,
-				A032398C189A2FAD006DA6C1 /* htdocs-themes */,
+				A0E3BAD818B15E6C0037DADD /* html */,
 				A0323993189A2FAD006DA6C1 /* xenherder-mockup */,
 			);
 			path = src;

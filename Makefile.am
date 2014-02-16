@@ -43,10 +43,9 @@ DIST_SUBDIRS				=
 
 # non-standard directories
 cgibindir				= $(pkglibexecdir)/cgi-bin
-htdocsdir				= $(htmldir)
-htmljsdir				= $(htdocsdir)/js
-htmlthemedir				= $(htdocsdir)/themes
-htmlthemedefaultdir			= $(htmlthemedir)/default
+jsdir					= $(htmldir)/js
+themesdir				= $(htmldir)/themes
+defaultthemedir				= $(themesdir)/default
 
 
 # Global flags
@@ -78,8 +77,8 @@ bin_PROGRAMS				=
 bin_SCRIPTS				=
 sbin_SCRIPTS				=
 cgibin_PROGRAMS				=
-htmljs_DATA				=
-htmlthemedefault_DATA			=
+js_DATA					=
+defaulttheme_DATA			=
 
 
 # lists
@@ -90,24 +89,24 @@ EXTRA_MANS				=
 EXTRA_DIST				= \
 					  lib/libxenherder/libxenherder.sym \
 					  lib/libxlstub/libxlstub.sym \
-					  src/htdocs-js/jquery.tablesorter.min.js \
-					  src/htdocs-js/jquery.min.js \
-					  src/htdocs-js/xenherder.js \
-					  src/htdocs-themes/asc.gif \
-					  src/htdocs-themes/bg.gif \
-					  src/htdocs-themes/desc.gif \
-					  src/htdocs-themes/xenherder.css \
-					  src/htdocs-themes/xenherder.html
+					  src/html/js/jquery.tablesorter.min.js \
+					  src/html/js/jquery.min.js \
+					  src/html/js/xenherder.js \
+					  src/html/themes/default/asc.gif \
+					  src/html/themes/default/bg.gif \
+					  src/html/themes/default/desc.gif \
+					  src/html/themes/default/xenherder.css \
+					  src/html/themes/default/xenherder.html
 CLEANFILES				= \
 					  $(builddir)/a.out   $(srcdir)/a.out \
 					  $(builddir)/*/a.out $(srcdir)/*/a.out \
 					  autoscan.log $(srcdir)/autoscan.log \
 					  config.h.in~ $(srcdir)/config.h.in~ \
 					  configure.scan $(srcdir)/configure.scan \
-					  src/htdocs-js/xenherder.min.js \
-					  src/htdocs-js/xenherder.min.js.tmp \
-					  src/htdocs-themes/xenherder.min.css \
-					  src/htdocs-themes/xenherder.min.css.tmp \
+					  src/html/js/xenherder.min.js \
+					  src/html/js/xenherder.min.js.tmp \
+					  src/html/themes/default/xenherder.min.css \
+					  src/html/themes/default/xenherder.min.css.tmp \
 					  $(man_MANS) \
 					  $(bin_SCRIPTS) \
 					  $(sbin_SCRIPTS) \
@@ -178,12 +177,12 @@ endif
 
 # macros for HTML
 if ENABLE_XENHERDER_CGI
-htmljs_DATA				+= src/htdocs-js/xenherder.min.js
-htmlthemedefault_DATA			+= src/htdocs-themes/asc.gif
-htmlthemedefault_DATA			+= src/htdocs-themes/bg.gif
-htmlthemedefault_DATA			+= src/htdocs-themes/desc.gif
-htmlthemedefault_DATA			+= src/htdocs-themes/xenherder.html
-htmlthemedefault_DATA			+= src/htdocs-themes/xenherder.min.css
+js_DATA					+= src/html/js/xenherder.min.js
+defaulttheme_DATA			+= src/html/themes/default/asc.gif
+defaulttheme_DATA			+= src/html/themes/default/bg.gif
+defaulttheme_DATA			+= src/html/themes/default/desc.gif
+defaulttheme_DATA			+= src/html/themes/default/xenherder.html
+defaulttheme_DATA			+= src/html/themes/default/xenherder.min.css
 endif
 
 
@@ -198,26 +197,26 @@ include $(srcdir)/@bindletools_srcdir@/build-aux/makefile-version.am
 # custom targets
 .PHONY:
 
-src/htdocs-js/xenherder.min.js: Makefile src/htdocs-js/xenherder.js
-	mkdir -p src/htdocs-js
+src/html/js/xenherder.min.js: Makefile src/html/js/xenherder.js
+	mkdir -p src/html/js
 	rm -f $(@)
 	sed -e 's,//.*$$,,g' \
 	   -e 's/^ *//g' \
 	   -e 's/ *$$//g' \
 	   -e 's,/\*.*\*/,,g' \
-	   $(srcdir)/src/htdocs-js/xenherder.js \
+	   $(srcdir)/src/html/js/xenherder.js \
 	   |grep -v '^$$' \
 	   |sed -e ':a' -e 'N' -e '$$!ba' -e 's/\([{;]\)\n/\1/g' \
 	   >> $(@).tmp
 	cat \
-	   $(srcdir)/src/htdocs-js/jquery.min.js \
-	   $(srcdir)/src/htdocs-js/jquery.tablesorter.min.js \
+	   $(srcdir)/src/html/js/jquery.min.js \
+	   $(srcdir)/src/html/js/jquery.tablesorter.min.js \
 	   $(@).tmp \
 	   > $(@)
 
 
-src/htdocs-themes/xenherder.min.css: Makefile src/htdocs-themes/xenherder.css
-	mkdir -p src/htdocs-themes
+src/html/themes/default/xenherder.min.css: Makefile src/html/themes/default/xenherder.css
+	mkdir -p src/html/themes/default
 	rm -f $(@)
 	sed -e 's,//.*$$,,g' \
 	   -e 's/^[[:space:]]*//g' \
@@ -225,7 +224,7 @@ src/htdocs-themes/xenherder.min.css: Makefile src/htdocs-themes/xenherder.css
 	   -e 's/:[[:space:]]*/:/g' \
 	   -e 's/[[:space:]]\{2,\}/ /g' \
 	   -e 's,/\*.*\*/,,g' \
-	   $(srcdir)/src/htdocs-themes/xenherder.css \
+	   $(srcdir)/src/html/themes/default/xenherder.css \
 	   |grep -v '^$$' \
 	   |sed -e ':a' -e 'N' -e '$$!ba' -e 's/\([{;]\)\n/\1/g' \
 	   > $(@)

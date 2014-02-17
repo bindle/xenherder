@@ -23,6 +23,8 @@
 		A0B4132C1898DA8400A6E780 /* domain.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B4132B1898DA8400A6E780 /* domain.h */; };
 		A0B4132F1898E4EF00A6E780 /* physinfo.c in Sources */ = {isa = PBXBuildFile; fileRef = A0B4132D1898E4EF00A6E780 /* physinfo.c */; };
 		A0B413301898E4EF00A6E780 /* physinfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A0B4132E1898E4EF00A6E780 /* physinfo.h */; };
+		A0E3BAE318B163280037DADD /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = A0E3BAE118B163280037DADD /* file.c */; };
+		A0E3BAE418B163280037DADD /* file.h in Headers */ = {isa = PBXBuildFile; fileRef = A0E3BAE218B163280037DADD /* file.h */; };
 		A0F4AEB218986FC50076CCA3 /* xenherder.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F4AEB118986FC50076CCA3 /* xenherder.h */; };
 		A0F4AEB7189874500076CCA3 /* version.c in Sources */ = {isa = PBXBuildFile; fileRef = A0F4AEB3189874500076CCA3 /* version.c */; };
 		A0F4AEB8189874500076CCA3 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F4AEB4189874500076CCA3 /* version.h */; };
@@ -125,6 +127,8 @@
 		A0B4132B1898DA8400A6E780 /* domain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = domain.h; sourceTree = "<group>"; };
 		A0B4132D1898E4EF00A6E780 /* physinfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = physinfo.c; sourceTree = "<group>"; };
 		A0B4132E1898E4EF00A6E780 /* physinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = physinfo.h; sourceTree = "<group>"; };
+		A0E3BAE118B163280037DADD /* file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
+		A0E3BAE218B163280037DADD /* file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
 		A0F4AEB118986FC50076CCA3 /* xenherder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = xenherder.h; sourceTree = "<group>"; };
 		A0F4AEB3189874500076CCA3 /* version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
 		A0F4AEB4189874500076CCA3 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 				A0F4AEB6189874500076CCA3 /* libxenherder.sym */,
 				A0F6857C1893223C0005BCE2 /* cgi.c */,
 				A0F6857E1893225C0005BCE2 /* cgi.h */,
+				A0E3BAE118B163280037DADD /* file.c */,
+				A0E3BAE218B163280037DADD /* file.h */,
 				A0F4AEB3189874500076CCA3 /* version.c */,
 				A0F4AEB4189874500076CCA3 /* version.h */,
 			);
@@ -401,6 +407,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E3BAE418B163280037DADD /* file.h in Headers */,
 				A0F4AEB8189874500076CCA3 /* version.h in Headers */,
 				A0F4AEB218986FC50076CCA3 /* xenherder.h in Headers */,
 				A0F6857F1893225C0005BCE2 /* cgi.h in Headers */,
@@ -559,6 +566,7 @@
 			files = (
 				A0F6857D1893223C0005BCE2 /* cgi.c in Sources */,
 				A0F4AEB7189874500076CCA3 /* version.c in Sources */,
+				A0E3BAE318B163280037DADD /* file.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

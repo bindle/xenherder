@@ -33,6 +33,17 @@
 #
 #   lib/libxenherder/libxenherder.sym exported symbols
 #
+# File Parsing
+xenherder_file_close
+xenherder_file_name
+xenherder_file_next_line
+xenherder_file_open
+xenherder_file_pop
+xenherder_file_push
+#
+#
+xenherder_pryr_gb
+#
 # Version/API information
 xenherder_information
 xenherder_version

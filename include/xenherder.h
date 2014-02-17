@@ -48,6 +48,7 @@
 #endif
 
 #include <inttypes.h>
+#include <sys/types.h>
 
 
 //////////////
@@ -115,6 +116,7 @@
 #endif
 
 typedef struct xenherder_info_struct  xenherder_info;
+typedef struct xenherder_file_struct  xenherder_file;
 
 
 ///////////////
@@ -153,6 +155,25 @@ struct xenherder_info_struct
  *  @{
  */
 _XENHERDER_F int xenherder_version(const xenherder_info ** infop);
+/** @} */
+
+
+/**
+ *  @defgroup File Parsing
+ *  @brief Functions for parsing text files.
+ *  @{
+ */
+_XENHERDER_F int xenherder_file_close(xenherder_file * xhfd);
+_XENHERDER_F int xenherder_file_errno(xenherder_file * xhfd);
+_XENHERDER_F int xenherder_file_name(xenherder_file * xhfd, char const ** namep);
+_XENHERDER_F int xenherder_file_next_line(xenherder_file * xhfd,
+   char * const * linep, size_t * lenp, size_t * nump);
+_XENHERDER_F int xenherder_file_open(xenherder_file ** xhfdp,
+   const char * filename);
+_XENHERDER_F int xenherder_file_pop(xenherder_file * xhfd);
+_XENHERDER_F int xenherder_file_push(xenherder_file * xhfd,
+   const char * filename);
+_XENHERDER_V const char xenherder_pryr_gb[];
 /** @} */
 
 

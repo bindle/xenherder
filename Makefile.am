@@ -136,6 +136,8 @@ lib_libxenherder_la_SOURCES		= $(include_HEADERS) \
 					  lib/libxenherder/libxenherder.h \
 					  lib/libxenherder/cgi.c \
 					  lib/libxenherder/cgi.h \
+					  lib/libxenherder/file.c \
+					  lib/libxenherder/file.h \
 					  lib/libxenherder/version.c \
 					  lib/libxenherder/version.h
 

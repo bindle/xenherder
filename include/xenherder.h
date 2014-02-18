@@ -166,8 +166,8 @@ _XENHERDER_F int xenherder_version(const xenherder_info ** infop);
 _XENHERDER_F int xenherder_file_close(xenherder_file * xhfd);
 _XENHERDER_F int xenherder_file_errno(xenherder_file * xhfd);
 _XENHERDER_F int xenherder_file_name(xenherder_file * xhfd, char const ** namep);
-_XENHERDER_F int xenherder_file_next_line(xenherder_file * xhfd,
-   char * const * linep, size_t * lenp, size_t * nump);
+_XENHERDER_F const char * xenherder_file_next_line(xenherder_file * xhfd,
+   size_t * lenp, size_t * nump);
 _XENHERDER_F int xenherder_file_open(xenherder_file ** xhfdp,
    const char * filename);
 _XENHERDER_F int xenherder_file_pop(xenherder_file * xhfd);

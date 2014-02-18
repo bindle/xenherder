@@ -74,6 +74,7 @@ AM_PROG_CC_C_O
 AC_PROG_INSTALL
 AC_USE_SYSTEM_EXTENSIONS # replaces AC_AIX AC_GNU_SOURCE AC_MINIX
 AC_C_BIGENDIAN
+AC_C_INLINE
 
 # binary locations
 AC_PROG_INSTALL
@@ -108,6 +109,7 @@ AC_CHECK_FUNCS([strdup],,        AC_MSG_ERROR([missing required libc function st
 AC_CHECK_FUNCS([uname],,         AC_MSG_ERROR([missing required libc function uname()]))
 
 # Header checks
+AC_CHECK_HEADERS([fcntl.h])
 AC_CHECK_HEADERS([locale.h])
 
 # Type checks
@@ -126,6 +128,7 @@ AC_TYPE_UINT64_T
 AC_BINDLE_ENABLE_WARNINGS
 AC_XENHERDER_LIBXENLIGHT
 AC_XENHERDER_CGI
+AC_XENHERDER_DEVEL_PROG
 
 # determine PACKAGE_VERSION via Git
 AC_BINDLE_GIT_PACKAGE_VERSION([contrib/bindletools/build-aux/git-package-version.sh])
@@ -151,6 +154,7 @@ AC_MSG_NOTICE([   library:             yes])
 AC_MSG_NOTICE([   daemon:              no])
 AC_MSG_NOTICE([   CLI tools:           no])
 AC_MSG_NOTICE([   CGI portal:          ${ENABLE_XENHERDER_CGI}])
+AC_MSG_NOTICE([   Dev Test Progs:      ${XENHERDER_DEVELPROG}])
 AC_MSG_NOTICE([   docs:                no])
 AC_MSG_NOTICE([])
 AC_MSG_NOTICE([Compile Options:])

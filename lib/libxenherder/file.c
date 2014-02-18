@@ -68,7 +68,7 @@
 #pragma mark - Definitions
 #endif
 
-#define XENHERDER_FILE_BUFF_SIZE  256LL
+#define XENHERDER_FILE_BUFF_SIZE  128LL
 
 
 ///////////////
@@ -83,17 +83,15 @@
 struct xenherder_file_struct
 {
    int              fd;
-   int              error;
-   const char     * line;
    char           * buff;
    char           * filename;
-   size_t           buff_size;
-   size_t           buff_len;
-   size_t           line_num;
-   size_t           line_len;
-   struct stat      sb;
-   xenherder_file * prev;
-   xenherder_file * cur;
+   size_t           bsize;       ///< Buffer size
+   size_t           blen;        ///< Buffer length (amount of data stored)
+   size_t           boffset;     ///< Buffer offset of EOL
+   size_t           lnum;        ///< Line count
+   struct stat      sb;          ///< stat() buffer of file
+   xenherder_file * prev;        ///< previous file in file stack (used for processing includes)
+   xenherder_file * cur;         ///< the current file being processed (used for processing includes)
 };
 
 
@@ -172,7 +170,7 @@ inline xenherder_file * xenherder_file_alloc(const char * filename)
       xenherder_file_free(xhfd);
       return(NULL);
    };
-   xhfd->buff_size  = XENHERDER_FILE_BUFF_SIZE;
+   xhfd->bsize  = XENHERDER_FILE_BUFF_SIZE;
 
    if ((xhfd->filename = strdup(filename)) == NULL)
    {
@@ -207,8 +205,61 @@ int xenherder_file_name(xenherder_file * xhfd, const char ** namep)
 }
 
 
-//_XENHERDER_F int xenherder_file_next_line(xenherder_file * xhfd,
-//   char * const * linep, size_t * lenp, size_t * nump);
+char const * xenherder_file_next_line(xenherder_file * xhfd, size_t * lenp,
+   size_t * nump)
+{
+   xenherder_file  * cur;
+   size_t            offset;
+   size_t            pos;
+   ssize_t           len;
+
+   assert(xhfd  != NULL);
+
+   cur = xhfd->cur;
+
+   // shift buffer to the left (erasing current line)
+   if (cur->boffset != 0)
+   {
+      offset = cur->blen - cur->boffset;
+      for(pos = 0; pos < offset; pos++)
+         cur->buff[pos] = cur->buff[pos + cur->boffset];
+   };
+   cur->blen    -= cur->boffset;
+   cur->boffset  = 0;
+
+   // attempt to fill buffer from file
+   if ((len = read(cur->fd, &cur->buff[cur->blen], (cur->bsize - cur->blen))) == -1)
+      return(NULL);
+   cur->blen += len;
+
+   // look for EOL
+   for(cur->boffset = 0; cur->boffset < cur->blen; cur->boffset++)
+   {
+      switch(cur->buff[cur->boffset])
+      {
+         case '\n':
+         cur->buff[cur->boffset] = '\0';
+         cur->lnum++;
+         if ((nump))
+            *nump = cur->lnum;
+         if ((lenp))
+            *lenp = cur->boffset;
+         if (cur->buff[cur->boffset-1] == '\r')
+         {
+            cur->buff[cur->boffset-1] = '\0';
+            if ((lenp))
+               *lenp -= 1;
+         };
+         cur->boffset++;
+         return(cur->buff);
+
+         default:
+         break;
+      };
+   };
+
+   return(NULL);
+}
 
 
 int xenherder_file_open(xenherder_file ** xhfdp, const char * filename)
@@ -265,12 +316,25 @@ int xenherder_file_pop(xenherder_file * xhfd)
 int xenherder_file_push(xenherder_file * xhfd, const char * filename)
 {
    xenherder_file * nxt;
+   xenherder_file * cur;
 
    assert(xhfd     != NULL);
    assert(filename != NULL);
 
    if ((nxt = xenherder_file_alloc(filename)) == NULL)
       return(errno);
+
+   cur = xhfd->cur;
+   while(cur != NULL)
+   {
+      if (  (cur->sb.st_ino == nxt->sb.st_ino) &&
+            (cur->sb.st_dev == nxt->sb.st_dev) )
+      {
+         xenherder_file_free(nxt);
+         return(EMLINK);
+      };
+      cur = cur->cur;
+   };
 
    nxt->prev = xhfd->cur;
    xhfd->cur = nxt;

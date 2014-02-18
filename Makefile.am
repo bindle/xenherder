@@ -114,7 +114,8 @@ CLEANFILES				= \
 					  @PACKAGE_TARNAME@-*.tar.* \
 					  @PACKAGE_TARNAME@-*.zip
 DISTCHECK_CONFIGURE_FLAGS		= --enable-strictwarnings \
-					  --enable-libxlstub
+					  --enable-libxlstub \
+					  --enable-devel-progs
 
 
 # macros for lib/libxenherder.la
@@ -163,6 +164,16 @@ lib_libxlstub_la_SOURCES		= $(include_HEADERS) \
 					  lib/libxlstub/domain.h \
 					  lib/libxlstub/physinfo.c \
 					  lib/libxlstub/physinfo.h
+
+
+# macros for src/xenherder-linenum
+src_xenherder_linenum_DEPENDENCIES	= lib/libxenherder.la
+src_xenherder_linenum_LDADD		= $(XENLIGHT_LIBS) lib/libxenherder.la
+src_xenherder_linenum_CPPFLAGS		= $(AM_CPPFLAGS) $(XENLIGHT_CPPFLAGS)
+src_xenherder_linenum_SOURCES		= src/misc/xenherder-linenum.c
+if XENHERDER_DEVELPROG
+noinst_PROGRAMS				+= src/xenherder-linenum
+endif
 
 
 # macros for src/xenherder-mockup.cgi

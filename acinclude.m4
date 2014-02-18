@@ -35,7 +35,7 @@
 #
 
 
-# AC_XENHERDER_LIBXENLIGHT()
+# AC_XENHERDER_CGI()
 # ______________________________________________________________________________
 AC_DEFUN([AC_XENHERDER_CGI],[dnl
 
@@ -190,5 +190,30 @@ AC_DEFUN([AC_XENHERDER_LIBXENLIGHT],[dnl
 
 ])dnl
 
+
+# AC_XENHERDER_DEVEL_PROG()
+# ______________________________________________________________________________
+AC_DEFUN([AC_XENHERDER_DEVEL_PROG],[dnl
+
+   # prerequists
+   AC_REQUIRE([AC_PROG_CC])
+
+   # display options
+   enableval=""
+   AC_ARG_ENABLE(
+      devel-progs,
+      [AS_HELP_STRING([--enable-devel-progs], [enable development test programs (default: no)])],
+      [ ENABLE_XENHERDER_DEVELPROG=$enableval ],
+      [ ENABLE_XENHERDER_DEVELPROG=$enableval ]
+   )
+
+   XENHERDER_DEVELPROG="yes"
+   if test "x${ENABLE_XENHERDER_DEVELPROG}" != "xyes";then
+      XENHERDER_DEVELPROG="no"
+   fi
+
+   AM_CONDITIONAL([XENHERDER_DEVELPROG],    [test x$XENHERDER_DEVELPROG = xyes])
+
+])dnl
 
 # end of m4 file
